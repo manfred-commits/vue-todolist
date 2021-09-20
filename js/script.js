@@ -29,10 +29,14 @@ var app = new Vue({
                 stato:false
             }
         ],
-        newTodo: {
-            nome:"",
-            stato:false
-        },
+
+        // verifica del push di un'oggetto in un array di oggetti: al push dell'oggetto sotto descritto, viene pushato SEMPRE l'oggetto vero e proprio, anche cambiando i valori delle proprietà. Anzi, cambiando questi valori, dentro l'array di oggetti, si riscontrerà il cambiamento delle proprietà all'esterno dell'array nell'oggetto di partenza.
+
+        // test:{
+        //     test:123,
+        //     test:232
+        // },
+        newTodo: ""
 
     },
     mounted:function(){ 
@@ -41,8 +45,19 @@ var app = new Vue({
         // questo metodo aggiunge il todo dall'array todos
 
         todoAdd: function() {
-            if(!this.newTodo.nome==""){
-                this.todos.push(this.newTodo);
+            if(!this.newTodo==""){
+                
+                // effettuo il push creando un'oggetto manualmente, così da non incorrere nel bug causato dal v-model su una keyword di un'oggetto da passare
+                this.todos.push({
+
+                    nome:this.newTodo,
+                    stato:false
+                
+                });
+                this.newTodo="";
+
+                // verifica del push di un'oggetto in un array di oggetti
+                // this.todos.push(this.test);
             }
         },        
         // questo metodo rimuove un elemento di indice specifico dall'array todos

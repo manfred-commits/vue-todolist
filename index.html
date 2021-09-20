@@ -27,8 +27,8 @@
             <header>
                 <img id="header-img" src="./img/logo (1).png" alt="">
                 <div class="container-input">
-                    <input v-model="newTodo.nome" type="text">
-                    <button @click="todoAdd">Aggiungi</button>
+                    <input v-model="newTodo" type="text">
+                    <button @click="todoAdd">Aggiungi todo</button>
                 </div>
             </header>
             <main>
@@ -36,8 +36,8 @@
                     <ul v-if="this.todos.length>0">
                         <li class="li-formatting" v-for="(todo,index) in todos" :key="index" >
                             <span :class="todo.stato==false ? 'not-done':'done'">{{todo.nome}} </span> 
-                            <button class="btn-completition" v-if="todo.stato==false" @click="taskCompleter(index)">Completa?</button>
-                            <button class="btn-completition" v-else @click="taskCompleter(index)">Non completa?</button>
+                            <button class="btn-completition" v-if="todo.stato==false" @click="taskCompleter(index)">Clicca se completata</button>
+                            <button class="btn-completition" v-else @click="taskCompleter(index)">Clicca se NON completata</button>
                             <i @click="removeTodo(index)" class="fas fa-times icon-format"></i>
                         </li>
                     </ul>
