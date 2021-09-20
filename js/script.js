@@ -49,6 +49,9 @@ var app = new Vue({
 
         removeTodo: function(todoIndex){
             this.todos.splice(todoIndex,1);
+        },
+        taskCompleter:function(todoIndex){
+            console.log(this.todos[todoIndex].stato);
         }
     }      
     

@@ -28,7 +28,11 @@
             <main>
                 <section class="container-todo">
                     <ul v-if="this.todos.length>0">
-                        <li  v-for="(todo,index) in todos" :key="index" :class="todo.stato==false ? 'not-done':'done'">{{todo.nome}} <i @click="removeTodo(index)" class="fas fa-times"></i></li>
+                        <li  v-for="(todo,index) in todos" :key="index" :class="todo.stato==false ? 'not-done':'done'">
+                            {{todo.nome}} 
+                            <button @click="taskCompleter(index)">completa</button>
+                            <i @click="removeTodo(index)" class="fas fa-times"></i>
+                        </li>
                     </ul>
                     <h2 v-else>Inserisci cose da fare</h2>
                 </section>
