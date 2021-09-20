@@ -8,5 +8,12 @@
 
 /* general rules */
 
-
+.not-done{
+    color: red;
+    text-decoration: line-through;
+}
+.done{
+    color: green;
+    text-decoration: line-through; 
+}
 /* /general rules */

@@ -6,7 +6,9 @@
 
 
 
-
+// Bonus:
+// Aggiungere lo stato per ogni todo e modificare la visualizzazione dell'elemento in pagina, verde e barrato se il todo è stato fatto o rosso se non è ancora stato fatto.
+// Prevedere inoltre un pulsante per modificare lo stato del singolo todo
 
 
 var app = new Vue({
@@ -16,7 +18,7 @@ var app = new Vue({
         todos:[
             {
                 nome:"Fare la doccia",
-                stato:false
+                stato:true
             },
             {
                 nome:"Fare la siesta",
@@ -44,7 +46,7 @@ var app = new Vue({
             }
         },        
         // questo metodo rimuove un elemento di indice specifico dall'array todos
-        
+
         removeTodo: function(todoIndex){
             this.todos.splice(todoIndex,1);
         }
