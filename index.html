@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="./css/style.css">
         <!-- /link to the css sheet -->
 
-        
+
         <title>To do</title>
     </head>
     <body>
@@ -21,14 +21,14 @@
             <header>
                 <img src="./img/logo (1).png" width="430px" alt="">
                 <div class="container-input">
-                    <input type="text">
-                    <button>Aggiungi</button>
+                    <input v-model="newTodo.nome" type="text">
+                    <button @click="todoAdd">Aggiungi</button>
                 </div>
             </header>
             <main>
                 <section class="container-todo">
                     <ul>
-                        <li v-for="(todo,index) in todos" :key="index">{{todo.nome}} </li>
+                        <li v-for="(todo,index) in todos" :key="index">{{todo.nome}} <i class="fas fa-times"></i></li>
                     </ul>
                 </section>
             </main>
