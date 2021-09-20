@@ -34,8 +34,8 @@
             <main>
                 <section class="container-todo">
                     <ul v-if="this.todos.length>0">
-                        <li class="li-formatting" v-for="(todo,index) in todos" :key="index" :class="todo.stato==false ? 'not-done':'done'">
-                            {{todo.nome}} 
+                        <li class="li-formatting" v-for="(todo,index) in todos" :key="index" >
+                            <span :class="todo.stato==false ? 'not-done':'done'">{{todo.nome}} </span> 
                             <button class="btn-completition" v-if="todo.stato==false" @click="taskCompleter(index)">Completa?</button>
                             <button class="btn-completition" v-else @click="taskCompleter(index)">Non completa?</button>
                             <i @click="removeTodo(index)" class="fas fa-times icon-format"></i>
