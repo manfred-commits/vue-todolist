@@ -18,9 +18,7 @@
             <main>
                 <section class="container-todo">
                     <ul>
-                        <li>fare doccia</li>
-                        <li>fare doccia</li>
-                        <li>fare doccia</li>
+                        <li v-for="(todo,index) in todos" :key="index">{{todo.nome}}</li>
                     </ul>
                 </section>
             </main>
