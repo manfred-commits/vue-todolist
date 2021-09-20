@@ -1,8 +1,8 @@
 // Descrizione:
 // Rifare l'esercizio della to do list come fatto assieme in classe:
 // - stampare in pagina un item per ogni elemento contenuto in un array ok
-// - ogni item ha una "x" associata: cliccando su di essa, l'item viene rimosso dalla lista
-// - predisporre un input per aggiungere un nuovo item alla lista: digitando il tasto invio oppure ciccando su un pulsante, il testo digitato viene aggiunto alla lista
+// - ogni item ha una "x" associata: cliccando su di essa, l'item viene rimosso dalla lista ok
+// - predisporre un input per aggiungere un nuovo item alla lista: digitando il tasto invio oppure ciccando su un pulsante, il testo digitato viene aggiunto alla lista ok
 
 
 
@@ -20,6 +20,10 @@ var app = new Vue({
             },
             {
                 nome:"Fare la siesta",
+                stato:false
+            },
+            {
+                nome:"Andare ad allenarsi",
                 stato:false
             }
         ],
@@ -39,6 +43,8 @@ var app = new Vue({
                 this.todos.push(this.newTodo);
             }
         },        
+        // questo metodo rimuove un elemento di indice specifico dall'array todos
+        
         removeTodo: function(todoIndex){
             this.todos.splice(todoIndex,1);
         }
