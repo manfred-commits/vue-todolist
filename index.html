@@ -28,7 +28,7 @@
             <main>
                 <section class="container-todo">
                     <ul>
-                        <li v-for="(todo,index) in todos" :key="index">{{todo.nome}} <i class="fas fa-times"></i></li>
+                        <li v-for="(todo,index) in todos" :key="index">{{todo.nome}} <i @click="removeTodo(index)" class="fas fa-times"></i></li>
                     </ul>
                 </section>
             </main>

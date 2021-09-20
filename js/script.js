@@ -38,9 +38,10 @@ var app = new Vue({
             if(!this.newTodo.nome==""){
                 this.todos.push(this.newTodo);
             }
+        },        
+        removeTodo: function(todoIndex){
+            console.log(todoIndex);
         }
-        
-        
     }      
     
 
