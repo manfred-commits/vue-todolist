@@ -18,7 +18,7 @@ var app = new Vue({
         todos:[
             {
                 nome:"Fare la doccia",
-                stato:true
+                stato:false
             },
             {
                 nome:"Fare la siesta",
@@ -32,7 +32,7 @@ var app = new Vue({
         newTodo: {
             nome:"",
             stato:false
-        }
+        },
 
     },
     mounted:function(){ 
@@ -50,9 +50,18 @@ var app = new Vue({
         removeTodo: function(todoIndex){
             this.todos.splice(todoIndex,1);
         },
+
+        // questo metodo esegue un toogle sullo stato dell'elemento dell'array todos, di indice specifico, per farlo diventare da vero a falso e viceversa
+
         taskCompleter:function(todoIndex){
-            console.log(this.todos[todoIndex].stato);
+
+           if(this.todos[todoIndex].stato==false){
+                this.todos[todoIndex].stato=true;
+           }else{
+            this.todos[todoIndex].stato=false;
+           }
         }
+
     }      
     
 
