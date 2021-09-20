@@ -40,7 +40,7 @@ var app = new Vue({
             }
         },        
         removeTodo: function(todoIndex){
-            console.log(todoIndex);
+            this.todos.splice(todoIndex,1);
         }
     }      
     
