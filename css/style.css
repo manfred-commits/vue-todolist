@@ -21,11 +21,13 @@ body{
     font-weight: 600;
 
 }
-
 li{
     list-style: none;
     padding: 5px;
     border-bottom: 1px solid grey;
+}
+li i{
+    cursor: pointer;
 }
 header .container-input input{
     padding: 7px 30px;
